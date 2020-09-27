@@ -95,9 +95,12 @@ public class DemoApplication {
         }
         if(total<10346 && total > 9654) {
         	return true;
+        }else {
+        	return false;
+        	
         }
-        return false;
-	
+        
+        
 	}  
 	
 	public static Boolean pokerTest(String chaves) {   
@@ -168,41 +171,6 @@ public class DemoApplication {
 			
 	}
 	
-	public final static boolean ValidatePoker(String binarystring)
-	{
-		int[] count = new int[16];
-		int countTotal = 0;
-		for (int i = 0; i < 16; i++)
-		{
-			count[i] = 0;
-		}
-		for (int i = 0; i < 5000; i += 4)
-		{
-			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.append(String.format("%1$s", binarystring.charAt(i)));
-			stringBuilder.append(String.format("%1$s", binarystring.charAt(i + 1)));
-			stringBuilder.append(String.format("%1$s", binarystring.charAt(i + 2)));
-			stringBuilder.append(String.format("%1$s", binarystring.charAt(i + 3)));
-			int number = Integer.parseInt(String.valueOf(stringBuilder), 2);
-			count[number]++;
-		}
-
-		for (int i = 0; i < 16; i++)
-		{
-			countTotal += (int)Math.pow(count[i], 2);
-		}
-
-		double x = (16.0 / 5000.0) * (countTotal * 1.0) - 5000.0;
-
-		if (x > 1.03 && x < 57.4)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
 	
 	public static  boolean theRunsTest(String binarystring)
 	{
